@@ -58,18 +58,18 @@ if (!is_null($events['events'])) {
 				"thumbnailImageUrl" => "https://example.com/bot/images/item1.jpg",
         "title" => "this is menu",
         "text" => "description",
-				"actions" => [$actions,$actions]
+				"actions" => $actions
 
 			];
 			$template = [
 					"type" => "carousel",
-				  "columns" => [$columns]
+				  "columns" => $columns
 			];
 			// Build message to reply back
 			$messages = [
 				'type' => 'template',
 				'altText' => 'this is a carousel template',
-				'template' => [$template]
+				'template' => $template
 			];
 
 			// Make a POST Request to Messaging API to reply to sender

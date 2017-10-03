@@ -68,15 +68,11 @@ elseif ($event['type'] == 'message' && $event['message']['type'] == 'sticker') {
 	]
 	// Build message to reply back
 	$messages = [
-		'type' => 'template',
-		'altText' => 'this is a buttons template',
-		'template' => {
-			'type' => 'buttons',
-			'thumbnailImageUrl' => "https://example.com/bot/images/image.jpg",
-			'title' => 'Menu',
-			'text' => 'Please select',
-			'actions' => [$actions]
-		}
+		'type' => 'location',
+		'title' => 'my location',
+		'address' => '〒150-0002 東京都渋谷区渋谷２丁目２１−１',
+		'latitude' => 35.65910807942215,
+		'longitude' => 139.70372892916203,
 	];
 
 	// Make a POST Request to Messaging API to reply to sender

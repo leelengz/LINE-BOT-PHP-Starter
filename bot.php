@@ -60,16 +60,25 @@ if (!is_null($events['events'])) {
 				'data' => 'action=buy&itemid=123'
 			];
 
-			$columns = [
+			$column1 = [
 				"thumbnailImageUrl" => "https://example.com/bot/images/item1.jpg",
         "title" => "this is menu",
         "text" => "description",
 				"actions" => [$action1,$action2]
 
 			];
+
+			$column2 = [
+				"thumbnailImageUrl" => "https://example.com/bot/images/item1.jpg",
+        "title" => "this is menu",
+        "text" => "description",
+				"actions" => [$action1,$action2]
+
+			];
+
 			$template = [
 					"type" => "carousel",
-				  "columns" => [$columns]
+				  "columns" => [$column1,$column2]
 			];
 			//Build message to reply back
 			$messages = [

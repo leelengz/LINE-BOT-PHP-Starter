@@ -51,8 +51,8 @@ if (!is_null($events['events'])) {
 	
 	// Build message to reply back
 	$messages = [
-		'type' => 'location',
-		'title' => 'my location',
+		'type' => 'template',
+		'altText' => 'my template',
 		'template' => {
 			'type' => 'buttons',
 			'thumbnailImageUrl' => "https://example.com/bot/images/image.jpg",

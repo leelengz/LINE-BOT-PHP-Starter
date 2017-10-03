@@ -49,13 +49,34 @@ if (!is_null($events['events'])) {
 	// Get replyToken
 	$replyToken = $event['replyToken'];
 	
+	$actions = [
+		{
+			'type' => 'postback',
+			'label' => 'Buy',
+			'data' => 'action=buy&itemid=123'
+		},
+		{
+			'type' => 'postback',
+			'label' => 'Add to cart',
+			'data' => 'action=add&itemid=123'
+		},
+		{
+			'type' => 'uri',
+			'label' => 'View detail',
+			'uri' => "http://example.com/page/123"
+		}
+	]
 	// Build message to reply back
 	$messages = [
 		'type' => 'location',
 		'title' => 'my location',
-		'address' => '〒150-0002 東京都渋谷区渋谷２丁目２１−１',
-		'latitude' => 35.65910807942215,
-		'longitude' => 139.70372892916203,
+		'template' => {
+			'type' => 'buttons',
+			'thumbnailImageUrl' => "https://example.com/bot/images/image.jpg",
+			'title' => 'Menu',
+			'text' => 'Please select',
+			'actions' => [$actions]
+		}
 	];
 
 	// Make a POST Request to Messaging API to reply to sender

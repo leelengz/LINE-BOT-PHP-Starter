@@ -48,9 +48,15 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-			$actions = [
+			$action1 = [
 				'type' => 'postback',
 				'label' => 'Buy',
+				'data' => 'action=buy&itemid=123'
+			];
+
+			$action2 = [
+				'type' => 'postback',
+				'label' => 'Buy2',
 				'data' => 'action=buy&itemid=123'
 			];
 
@@ -58,7 +64,7 @@ if (!is_null($events['events'])) {
 				"thumbnailImageUrl" => "https://example.com/bot/images/item1.jpg",
         "title" => "this is menu",
         "text" => "description",
-				"actions" => [$actions]
+				"actions" => [$action1,$action2]
 
 			];
 			$template = [

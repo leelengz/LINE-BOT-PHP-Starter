@@ -44,7 +44,7 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-elseif ($event['type'] == 'message' && $event['message']['type'] == 'sticker') {
+else{
 	// Get text sent
 	$text = $event['message']['text'];
 	// Get replyToken

@@ -65,7 +65,7 @@ if (!is_null($events['events'])) {
 			'label' => 'View detail',
 			'uri' => "http://example.com/page/123"
 		}
-	]
+	];
 	// Build message to reply back
 	$messages = [
 		'type' => 'location',

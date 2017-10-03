@@ -64,14 +64,24 @@ if (!is_null($events['events'])) {
 					'label' => 'View detail',
 					'uri' => "http://example.com/page/123"
 				}
-			]
+			];
+
+			$columns = [
+				"thumbnailImageUrl" => "https://example.com/bot/images/item1.jpg",
+        "title" => "this is menu",
+        "text" => "description",
+				"actions" => [$actions]
+
+			];
+			$template = [
+					"type" => "carousel",
+				  "columns" => [$columns]
+			];
 			// Build message to reply back
 			$messages = [
-				'type' => 'location',
-				'title' => 'my location',
-				'address' => '〒150-0002 東京都渋谷区渋谷２丁目２１−１',
-				'latitude' => 35.65910807942215,
-				'longitude' => 139.70372892916203,
+				'type' => 'template',
+				'altText' => 'this is a carousel template',
+				'template' => [$template]
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
@@ -94,7 +104,7 @@ if (!is_null($events['events'])) {
 
 			echo $result . "\r\n";
 		}
-		
+
 
 	}
 

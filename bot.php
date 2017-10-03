@@ -58,25 +58,25 @@ if (!is_null($events['events'])) {
 				"thumbnailImageUrl" => "https://example.com/bot/images/item1.jpg",
         "title" => "this is menu",
         "text" => "description",
-				"actions" => $actions
+				"actions" => [$actions]
 
 			];
 			$template = [
 					"type" => "carousel",
-				  "columns" => $columns
+				  "columns" => [$columns]
 			];
-			// Build message to reply back
-			// $messages = [
-			// 	'type' => 'template',
-			// 	'altText' => 'this is a carousel template',
-			// 	'template' => $template
-			// ];
-
+			Build message to reply back
 			$messages = [
-				'type' => 'sticker',
-				'packageId' => '1',
-				'stickerId' => '1'
+				'type' => 'template',
+				'altText' => 'this is a carousel template',
+				'template' => $template
 			];
+
+			// $messages = [
+			// 	'type' => 'sticker',
+			// 	'packageId' => '1',
+			// 	'stickerId' => '1'
+			// ];
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';

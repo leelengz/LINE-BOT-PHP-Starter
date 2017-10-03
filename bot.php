@@ -79,6 +79,6 @@ elseif ($event['type'] == 'message' && $event['message']['type'] == 'sticker') {
 
 	echo $result . "\r\n";
 }
-}
+
 
 echo "OK";

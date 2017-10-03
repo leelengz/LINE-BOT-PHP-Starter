@@ -76,6 +76,7 @@ elseif ($event['type'] == 'message' && $event['message']['type'] == 'sticker') {
 			'title' => 'Menu',
 			'text' => 'Please select',
 			'actions' => [$actions]
+		}
 	];
 
 	// Make a POST Request to Messaging API to reply to sender

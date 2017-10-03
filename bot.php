@@ -58,7 +58,7 @@ if (!is_null($events['events'])) {
 				"thumbnailImageUrl" => "https://example.com/bot/images/item1.jpg",
         "title" => "this is menu",
         "text" => "description",
-				"actions" => [$actions]
+				"actions" => [$actions,$actions]
 
 			];
 			$template = [

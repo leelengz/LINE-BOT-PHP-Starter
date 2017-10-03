@@ -61,7 +61,7 @@ if (!is_null($events['events'])) {
 			];
 
 			$column1 = [
-				"thumbnailImageUrl" => "https://instagram.fbkk7-3.fna.fbcdn.net/t51.2885-15/e35/11351690_2011720159052358_2018007556_n.jpg",
+				"thumbnailImageUrl" => "https://vue.23perspective.com/upload/showcase/banner02_lg.png",
         "title" => "this is menu",
         "text" => "description",
 				"actions" => [$action1,$action2]
@@ -69,7 +69,7 @@ if (!is_null($events['events'])) {
 			];
 
 			$column2 = [
-				"thumbnailImageUrl" => "https://instagram.fbkk7-3.fna.fbcdn.net/t51.2885-15/e35/11351690_2011720159052358_2018007556_n.jpg",
+				"thumbnailImageUrl" => "https://vue.23perspective.com/upload/showcase/banner02_lg.png",
         "title" => "this is menu",
         "text" => "description",
 				"actions" => [$action1,$action2]

@@ -76,8 +76,6 @@ if (!is_null($events['events'])) {
 		            "uri" => "http://example.com/page/123"
 		          }
 		      ]
-  }
-
 			];
 
 			// Make a POST Request to Messaging API to reply to sender

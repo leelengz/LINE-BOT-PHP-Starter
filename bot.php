@@ -66,10 +66,16 @@ if (!is_null($events['events'])) {
 				  "columns" => $columns
 			];
 			// Build message to reply back
+			// $messages = [
+			// 	'type' => 'template',
+			// 	'altText' => 'this is a carousel template',
+			// 	'template' => $template
+			// ];
+
 			$messages = [
-				'type' => 'template',
-				'altText' => 'this is a carousel template',
-				'template' => $template
+				'type' => 'sticker',
+				'packageId' => '1',
+				'stickerId' => '1''
 			];
 
 			// Make a POST Request to Messaging API to reply to sender

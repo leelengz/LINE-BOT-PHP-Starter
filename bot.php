@@ -65,7 +65,7 @@ if (!is_null($events['events'])) {
 					"type" => "carousel",
 				  "columns" => [$columns]
 			];
-			Build message to reply back
+			//Build message to reply back
 			$messages = [
 				'type' => 'template',
 				'altText' => 'this is a carousel template',

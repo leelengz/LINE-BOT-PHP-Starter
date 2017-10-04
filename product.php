@@ -71,7 +71,7 @@ if (!is_null($events['events'])) {
 			];
 
 			$column1 = [
-				"thumbnailImageUrl" => "https://vue.23perspective.com/upload/showcase/banner02_lg.png",
+				"thumbnailImageUrl" => "https://raw.githubusercontent.com/leelengz/LINE-BOT-PHP-Starter/master/menu1.jpg",
         "title" => "SCG MENU",
         "text" => "Choose menu",
 				"actions" => [$action1,$action2,$action3]
@@ -129,8 +129,8 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'image',
-				'originalContentUrl' => "https://raw.githubusercontent.com/leelengz/LINE-BOT-PHP-Starter/master/menu1.jpg",
-				'previewImageUrl' => "https://raw.githubusercontent.com/leelengz/LINE-BOT-PHP-Starter/master/menu2.jpg"
+				'originalContentUrl' => "https://raw.githubusercontent.com/leelengz/LINE-BOT-PHP-Starter/master/allproduct.jpg",
+				'previewImageUrl' => "https://raw.githubusercontent.com/leelengz/LINE-BOT-PHP-Starter/master/allproduct.jpg"
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
@@ -184,14 +184,6 @@ if (!is_null($events['events'])) {
 				"actions" => [$action1,$action2,$action3]
 
 			];
-
-			// $column2 = [
-			// 	"thumbnailImageUrl" => "https://vue.23perspective.com/upload/showcase/banner02_lg.png",
-			//   "title" => "this is menu",
-			//   "text" => "description",
-			// 	"actions" => [$action1,$action2]
-			//
-			// ];
 
 			$template = [
 					"type" => "carousel",

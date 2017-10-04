@@ -227,6 +227,77 @@ if (!is_null($events['events'])) {
 			echo $result . "\r\n";
 		}
 
+		elseif ($event['type'] == 'message' && $event['message']['type'] == 'text' && $keyword == 'product 1 trending') {
+			// Get text sent
+			$text = $event['message']['text'];
+			// Get replyToken
+			$replyToken = $event['replyToken'];
+
+
+			$action1 = [
+				'type' => 'uri',
+				'label' => 'Analyze',
+				'uri' => 'https://www.scg-trading.com/'
+			];
+
+			$column1 = [
+				"thumbnailImageUrl" => "https://raw.githubusercontent.com/leelengz/LINE-BOT-PHP-Starter/master/g7day.png",
+				"title" => "Product 1 Trending ",
+				"text" => "(7 Days)",
+				"actions" => [$action1]
+
+			];
+
+			$column2 = [
+				"thumbnailImageUrl" => "https://raw.githubusercontent.com/leelengz/LINE-BOT-PHP-Starter/master/g7day.png",
+				"title" => "Product 1 Trending ",
+				"text" => "(30 Days)",
+				"actions" => [$action1]
+
+			];
+
+			// $column2 = [
+			// 	"thumbnailImageUrl" => "https://vue.23perspective.com/upload/showcase/banner02_lg.png",
+			//   "title" => "this is menu",
+			//   "text" => "description",
+			// 	"actions" => [$action1,$action2]
+			//
+			// ];
+
+			$template = [
+					"type" => "carousel",
+					"columns" => [$column1,$column2]
+			];
+			//Build message to reply back
+			$messages = [
+				'type' => 'template',
+				'altText' => 'Product 1 Trending',
+				'template' => $template
+			];
+
+
+			// Make a POST Request to Messaging API to reply to sender
+			$url = 'https://api.line.me/v2/bot/message/reply';
+			$data = [
+				'replyToken' => $replyToken,
+				'messages' => [$messages],
+			];
+			$post = json_encode($data);
+			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			$result = curl_exec($ch);
+
+			curl_close($ch);
+
+			echo $result . "\r\n";
+		}
+
 
 		// elseif ($event['type'] == 'postback' && $event['postback']['data'] == 'product') {
 		// 	// Get text sent

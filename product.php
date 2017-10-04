@@ -16,7 +16,7 @@ if (!is_null($events['events'])) {
 			// Get text sent
 			// $text = $event['source']['userId'];
 
-			$text = "WELCOME TO SCG LOGISTICS";
+			$text = 'WELCOME TO SCG Trading \r\n พิมพ์ "menu" เพื่อเข้าสู่หน้าหลัก \r\n พิมพ์ "help" เพื่อขอความช่วยเหลือ หรือลองพิมพ์ข้อความใหม่อีกครั้ง';
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
@@ -77,14 +77,6 @@ if (!is_null($events['events'])) {
 				"actions" => [$action1,$action2,$action3]
 
 			];
-
-			// $column2 = [
-			// 	"thumbnailImageUrl" => "https://vue.23perspective.com/upload/showcase/banner02_lg.png",
-      //   "title" => "this is menu",
-      //   "text" => "description",
-			// 	"actions" => [$action1,$action2]
-			//
-			// ];
 
 			$template = [
 					"type" => "carousel",
@@ -248,14 +240,6 @@ if (!is_null($events['events'])) {
 
 			];
 
-			// $column2 = [
-			// 	"thumbnailImageUrl" => "https://vue.23perspective.com/upload/showcase/banner02_lg.png",
-			//   "title" => "this is menu",
-			//   "text" => "description",
-			// 	"actions" => [$action1,$action2]
-			//
-			// ];
-
 			$template = [
 					"type" => "carousel",
 					"columns" => [$column1,$column2]
@@ -290,6 +274,75 @@ if (!is_null($events['events'])) {
 			echo $result . "\r\n";
 		}
 
+		elseif ($event['type'] == 'message' && $event['message']['type'] == 'text' && $keyword == 'help') {
+			// Get text sent
+			// $text = $event['source']['userId'];
+
+			$text = 'โทร 02-999-9999 เพื่อติดต่อเจ้าหน้าที่';
+			// Get replyToken
+			$replyToken = $event['replyToken'];
+
+			// Build message to reply back
+			$messages = [
+				'type' => 'text',
+				'text' => $text
+			];
+
+			// Make a POST Request to Messaging API to reply to sender
+			$url = 'https://api.line.me/v2/bot/message/reply';
+			$data = [
+				'replyToken' => $replyToken,
+				'messages' => [$messages],
+			];
+			$post = json_encode($data);
+			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			$result = curl_exec($ch);
+			curl_close($ch);
+
+			echo $result . "\r\n";
+		}
+
+		else {
+			// Get text sent
+			// $text = $event['source']['userId'];
+
+			$text = 'WELCOME TO SCG Trading \r\n พิมพ์ "menu" เพื่อเข้าสู่หน้าหลัก \r\n พิมพ์ "help" เพื่อขอความช่วยเหลือ หรือลองพิมพ์ข้อความใหม่อีกครั้ง';
+			// Get replyToken
+			$replyToken = $event['replyToken'];
+
+			// Build message to reply back
+			$messages = [
+				'type' => 'text',
+				'text' => $text
+			];
+
+			// Make a POST Request to Messaging API to reply to sender
+			$url = 'https://api.line.me/v2/bot/message/reply';
+			$data = [
+				'replyToken' => $replyToken,
+				'messages' => [$messages],
+			];
+			$post = json_encode($data);
+			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			$result = curl_exec($ch);
+			curl_close($ch);
+
+			echo $result . "\r\n";
+		}
 
 		// elseif ($event['type'] == 'postback' && $event['postback']['data'] == 'product') {
 		// 	// Get text sent

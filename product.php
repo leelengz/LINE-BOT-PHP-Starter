@@ -118,7 +118,7 @@ if (!is_null($events['events'])) {
 			echo $result . "\r\n";
 		}
 
-		elseif ($event['type'] == 'message' && $event['message']['type'] == 'text' && $keyword != 'product') {
+		elseif ($event['type'] == 'message' && $event['message']['type'] == 'text' && $keyword == 'product') {
 			// Get text sent
 			$text = $event['source']['userId'];
 			// Get replyToken

@@ -241,7 +241,7 @@ if (!is_null($events['events'])) {
 			];
 
 			$column1 = [
-				"thumbnailImageUrl" => "https://raw.githubusercontent.com/leelengz/LINE-BOT-PHP-Starter/master/g7day.png",
+				"thumbnailImageUrl" => "https://raw.githubusercontent.com/leelengz/LINE-BOT-PHP-Starter/master/g1day.png",
 				"title" => "Product 1 Trending ",
 				"text" => "(7 Days)",
 				"actions" => [$action1]
@@ -249,7 +249,7 @@ if (!is_null($events['events'])) {
 			];
 
 			$column2 = [
-				"thumbnailImageUrl" => "https://raw.githubusercontent.com/leelengz/LINE-BOT-PHP-Starter/master/g7day.png",
+				"thumbnailImageUrl" => "https://raw.githubusercontent.com/leelengz/LINE-BOT-PHP-Starter/master/g1day.png",
 				"title" => "Product 1 Trending ",
 				"text" => "(30 Days)",
 				"actions" => [$action1]

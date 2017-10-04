@@ -129,8 +129,8 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'image',
-				'originalContentUrl' => "https://vue.23perspective.com/upload/showcase/banner02_lg.png",
-				'previewImageUrl' => "https://vue.23perspective.com/upload/showcase/banner02_lg.png"
+				'originalContentUrl' => "https://raw.githubusercontent.com/leelengz/LINE-BOT-PHP-Starter/master/menu1.jpg",
+				'previewImageUrl' => "https://raw.githubusercontent.com/leelengz/LINE-BOT-PHP-Starter/master/menu2.jpg"
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
@@ -178,7 +178,7 @@ if (!is_null($events['events'])) {
 			];
 
 			$column1 = [
-				"thumbnailImageUrl" => "https://vue.23perspective.com/upload/showcase/banner02_lg.png",
+				"thumbnailImageUrl" => "https://raw.githubusercontent.com/leelengz/LINE-BOT-PHP-Starter/master/product1.jpg",
 				"title" => "Product 1",
 				"text" => "5000 Baht",
 				"actions" => [$action1,$action2,$action3]
@@ -241,15 +241,15 @@ if (!is_null($events['events'])) {
 			];
 
 			$column1 = [
-				"thumbnailImageUrl" => "https://raw.githubusercontent.com/leelengz/LINE-BOT-PHP-Starter/master/g1day.png",
+				"thumbnailImageUrl" => "https://raw.githubusercontent.com/leelengz/LINE-BOT-PHP-Starter/master/graph1.jpg",
 				"title" => "Product 1 Trending ",
-				"text" => "(7 Days)",
+				"text" => "(1 Days)",
 				"actions" => [$action1]
 
 			];
 
 			$column2 = [
-				"thumbnailImageUrl" => "https://raw.githubusercontent.com/leelengz/LINE-BOT-PHP-Starter/master/g1day.png",
+				"thumbnailImageUrl" => "https://raw.githubusercontent.com/leelengz/LINE-BOT-PHP-Starter/master/graph2.jpg",
 				"title" => "Product 1 Trending ",
 				"text" => "(30 Days)",
 				"actions" => [$action1]

@@ -16,7 +16,7 @@ if (!is_null($events['events'])) {
 			// Get text sent
 			// $text = $event['source']['userId'];
 
-			$text = 'WELCOME TO SCG Trading \r\n พิมพ์ "menu" เพื่อเข้าสู่หน้าหลัก \r\n พิมพ์ "help" เพื่อขอความช่วยเหลือ หรือลองพิมพ์ข้อความใหม่อีกครั้ง';
+			$text = 'WELCOME TO SCG Trading พิมพ์ "menu" เพื่อเข้าสู่หน้าหลัก พิมพ์ "help" เพื่อขอความช่วยเหลือ หรือลองพิมพ์ข้อความใหม่อีกครั้ง';
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
@@ -313,7 +313,7 @@ if (!is_null($events['events'])) {
 			// Get text sent
 			// $text = $event['source']['userId'];
 
-			$text = 'WELCOME TO SCG Trading \r\n พิมพ์ "menu" เพื่อเข้าสู่หน้าหลัก \r\n พิมพ์ "help" เพื่อขอความช่วยเหลือ หรือลองพิมพ์ข้อความใหม่อีกครั้ง';
+			$text = 'WELCOME TO SCG Trading พิมพ์ "menu" เพื่อเข้าสู่หน้าหลัก พิมพ์ "help" เพื่อขอความช่วยเหลือ หรือลองพิมพ์ข้อความใหม่อีกครั้ง';
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 

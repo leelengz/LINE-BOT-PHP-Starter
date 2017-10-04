@@ -95,11 +95,6 @@ if (!is_null($events['events'])) {
 				'template' => $template
 			];
 
-			// $messages = [
-			// 	'type' => 'sticker',
-			// 	'packageId' => '1',
-			// 	'stickerId' => '1'
-			// ];
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
@@ -123,55 +118,90 @@ if (!is_null($events['events'])) {
 			echo $result . "\r\n";
 		}
 
-		elseif ($event['type'] == 'message' && $event['message']['type'] == 'sticker') {
+		elseif ($event['type'] == 'message' && $event['message']['type'] == 'text' && $keyword != 'product') {
+			// Get text sent
+			$text = $event['source']['userId'];
+			// Get replyToken
+			$replyToken = $event['replyToken'];
+
+			// Build message to reply back
+			$messages = [
+				'type' => 'image',
+				'originalContentUrl' => "https://vue.23perspective.com/upload/showcase/banner02_lg.png",
+				'previewImageUrl' => "https://vue.23perspective.com/upload/showcase/banner02_lg.png"
+			];
+
+			// Make a POST Request to Messaging API to reply to sender
+			$url = 'https://api.line.me/v2/bot/message/reply';
+			$data = [
+				'replyToken' => $replyToken,
+				'messages' => [$messages],
+			];
+			$post = json_encode($data);
+			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			$result = curl_exec($ch);
+			curl_close($ch);
+
+			echo $result . "\r\n";
+		}
+
+		elseif ($event['type'] == 'message' && $event['message']['type'] == 'text' && $keyword == 'product 1') {
 			// Get text sent
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			$action1 = [
-				'type' => 'postback',
-				'label' => 'Buy',
-				'data' => 'product'
+				'type' => 'message',
+				'label' => 'Trending',
+				'text' => 'Product 1 trending'
 			];
 
 			$action2 = [
 				'type' => 'message',
-				'label' => 'message',
-				'text' => 'product'
+				'label' => 'Detail',
+				'text' => 'Product 1 detail'
+			];
+
+			$action3 = [
+				'type' => 'uri',
+				'label' => 'More',
+				'uri' => 'https://www.scg-trading.com/'
 			];
 
 			$column1 = [
 				"thumbnailImageUrl" => "https://vue.23perspective.com/upload/showcase/banner02_lg.png",
-        "title" => "this is menu",
-        "text" => "description",
-				"actions" => [$action1,$action2]
+				"title" => "Product 1",
+				"text" => "5000 Baht",
+				"actions" => [$action1,$action2,$action3]
 
 			];
 
-			$column2 = [
-				"thumbnailImageUrl" => "https://vue.23perspective.com/upload/showcase/banner02_lg.png",
-        "title" => "this is menu",
-        "text" => "description",
-				"actions" => [$action1,$action2]
-
-			];
+			// $column2 = [
+			// 	"thumbnailImageUrl" => "https://vue.23perspective.com/upload/showcase/banner02_lg.png",
+			//   "title" => "this is menu",
+			//   "text" => "description",
+			// 	"actions" => [$action1,$action2]
+			//
+			// ];
 
 			$template = [
 					"type" => "carousel",
-				  "columns" => [$column1,$column2]
+					"columns" => [$column1]
 			];
 			//Build message to reply back
 			$messages = [
 				'type' => 'template',
-				'altText' => 'this is a carousel template',
+				'altText' => 'Product',
 				'template' => $template
 			];
 
-			// $messages = [
-			// 	'type' => 'sticker',
-			// 	'packageId' => '1',
-			// 	'stickerId' => '1'
-			// ];
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
@@ -194,6 +224,7 @@ if (!is_null($events['events'])) {
 
 			echo $result . "\r\n";
 		}
+
 
 		// elseif ($event['type'] == 'postback' && $event['postback']['data'] == 'product') {
 		// 	// Get text sent

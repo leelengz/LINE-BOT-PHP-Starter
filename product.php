@@ -10,7 +10,9 @@ if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
-		if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] != 'menu') {
+		$keyword = strtolower($event['message']['text']);
+
+		if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $keyword != 'menu') {
 			// Get text sent
 			$text = $event['source']['userId'];
 			// Get replyToken
@@ -43,7 +45,7 @@ if (!is_null($events['events'])) {
 			echo $result . "\r\n";
 		}
 
-		elseif ($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] == 'menu') {
+		elseif ($event['type'] == 'message' && $event['message']['type'] == 'text' && $keyword == 'menu') {
 			// Get text sent
 			$text = $event['message']['text'];
 			// Get replyToken

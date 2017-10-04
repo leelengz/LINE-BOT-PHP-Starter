@@ -52,20 +52,20 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			$action1 = [
 				'type' => 'message',
-				'label' => 'product',
-				'text' => 'All product'
+				'label' => 'All product',
+				'text' => 'product'
 			];
 
 			$action2 = [
 				'type' => 'message',
-				'label' => 'message',
-				'text' => 'Trending'
+				'label' => 'Trending',
+				'text' => 'trending'
 			];
 
 			$action3 = [
 				'type' => 'message',
-				'label' => 'currency',
-				'text' => 'Currency'
+				'label' => 'Currency',
+				'text' => 'currency'
 			];
 
 			$column1 = [
